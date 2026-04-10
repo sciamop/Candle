@@ -11,7 +11,7 @@ execute_process(
 configure_file(versionconfig.h.in versionconfig.h)
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
-find_package(Qt5 COMPONENTS Core Widgets OpenGL SerialPort Script ScriptTools LinguistTools Network WebSockets Help REQUIRED)
+find_package(Qt5 COMPONENTS Core Widgets OpenGL SerialPort Script ScriptTools LinguistTools Network WebSockets Help Quick QuickWidgets Qml REQUIRED)
 
 if(WIN32)
     find_package(Qt5 COMPONENTS WinExtras)
@@ -26,6 +26,7 @@ qt5_add_resources(RSC_FILES
         images.qrc
         fonts.qrc
         styles.qrc
+        visualizer.qrc
 )
 
 qt5_add_translation(QM_FILES ${TS_FILES})
@@ -56,7 +57,7 @@ target_compile_definitions(candle PRIVATE
         QT_NO_DEBUG
 )
 
-target_link_libraries(candle PRIVATE customwidgets Qt5::Core Qt5::Widgets Qt5::OpenGL Qt5::SerialPort Qt5::Script Qt5::ScriptTools Qt5::Network Qt5::WebSockets Qt5::Help)
+target_link_libraries(candle PRIVATE customwidgets Qt5::Core Qt5::Widgets Qt5::OpenGL Qt5::SerialPort Qt5::Script Qt5::ScriptTools Qt5::Network Qt5::WebSockets Qt5::Help Qt5::Quick Qt5::QuickWidgets Qt5::Qml)
 
 # Main executable
 if(APPLE)

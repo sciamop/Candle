@@ -2699,7 +2699,7 @@ QLabel[overrided=&quot;false&quot;] {
          <number>0</number>
         </property>
         <item>
-         <widget class="GLWidget" name="glwVisualizer" native="true"/>
+         <widget class="VisualizerWidget" name="glwVisualizer" native="true"/>
         </item>
         <item>
          <widget class="QToolButton" name="cmdPerspective">
@@ -3578,9 +3578,9 @@ QLabel[overrided=&quot;false&quot;] {
    </slots>
   </customwidget>
   <customwidget>
-   <class>GLWidget</class>
+   <class>VisualizerWidget</class>
    <extends>QWidget</extends>
-   <header location="global">widgets/glwidget.h</header>
+   <header location="global">widgets/visualizerwidget.h</header>
    <container>1</container>
   </customwidget>
   <customwidget>

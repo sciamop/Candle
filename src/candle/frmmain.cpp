@@ -25,6 +25,7 @@
 #include <QClipboard>
 #include "frmmain.h"
 #include "ui_frmmain.h"
+#include "widgets/visualizerwidget.h"
 #include "ui_frmsettings.h"
 #include "frmchecklist.h"
 #include "widgets/widgetmimedata.h"
@@ -297,7 +298,7 @@ void frmMain::initDrawers()
     ui->glwVisualizer->addDrawable(m_machineBoundsDrawer);
     ui->glwVisualizer->fitDrawable();
 
-    connect(ui->glwVisualizer, &GLWidget::resized, this, &frmMain::placeVisualizerButtons);
+    connect(ui->glwVisualizer, &VisualizerWidget::resized, this, &frmMain::placeVisualizerButtons);
     connect(ui->dockVisualizer, &QDockWidget::visibilityChanged, this, &frmMain::placeVisualizerButtons);
 }
 
